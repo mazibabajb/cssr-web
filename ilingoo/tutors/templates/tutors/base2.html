@@ -1,0 +1,125 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,  initial-scale=1.0">
+	<link href="{% static 'tutors/img/logo.jpg' %}" rel="shortcut icon"/>
+	<script src="https://kit.fontawesome.com/c71fd77aaa.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'tutors/css/style.css' %}">
+	<title>learn languages from any whare in the World</title>
+</head>
+<body>
+	<div class="menu-btn">
+	<i class="fas fa-bars fa-2x"></i>
+	</div>
+	<div class="container">
+          <div class="hero">
+		<!--nav -->
+		<nav  class="main-nav">
+			<img src="{% static 'tutors/img/logo.jpg' %}" alt="elingo" class="logo">
+
+			 <ul class="main-menu ">
+			 	<li><a href="{% url 'tutor-home' %}">Home</a></li>
+			 	<li><a href="{% url 'find' %}">Find tuotors</a></li>
+			 	<li><a href="about.html">Enterprice</a></li>
+			 	<li>
+			 		{% if user.is_authenticated %}
+
+			 		{% else %}
+			 		<a href="{% url 'register' %}">Become a tutor</a>
+			 		{% endif %}
+			 	</li>
+			 </ul>
+			 <ul class="right-menu">
+			 	<li>
+			 		    {% if user.is_authenticated %}
+                     <a href="{% url 'profile' %}">
+                              Dashboard
+                         </a>
+                         {% else %}
+                         <a href="{% url 'login' %}">
+                              English
+                         </a>
+                         {% endif %}
+
+			 	</li>
+			 	<li>
+			 		{% if user.is_authenticated %}
+                     <a href="{% url 'logout' %}">
+			 			Logout
+			 		</a>
+			 		{% else %}
+			 		<a href="{% url 'login' %}">
+			 			login
+			 		</a>
+			 		{% endif %}
+			 	</li>
+			 </ul>
+		</nav>
+		   <div>
+			{% if messages %}
+			{% for message in messages %}
+			 <h2 class="m{{ message.tags }}">{{ message }}</h2>
+			{% endfor %}
+			{% endif %}
+			</div>
+	
+             {% block content %}
+
+            {% endblock content %}
+         <section class="footer">	
+     	<ul>
+     		<h4>About us</h4>
+     		<li>Help</li>
+     		<li>How it Works</li>
+     		<li>Scholarship</li>
+     		<li>Education</li>
+     		<li>We are hiring</li>
+     		<li>Elingo Blog</li>
+     		<li>Media kit</li>
+     		<li>Status</li>
+     	</ul>
+     	<ul>
+     		<h4>Learn</h4>
+     		<li>Question and answer</li>
+     		<li>Answers</li>
+     		<li>Private</li>
+     		<li>Affliate Program</li>
+     		<li>Referal Program</li>
+     		<li>Enterprise</li>
+     		<li>Elearning index</li>
+     		<li>How to learn</li>
+     	</ul>
+     	<ul>
+     		<h4>Job Opportunities</h4>
+     		<li>Become A tutor</li>
+     		<li>Tutoring Jobs</li>
+     	</ul>
+     	<ul>
+     		<h4>Support</h4>
+     		<li>Need any help</li>
+     		<li>support@elingo.com</li>
+     		
+     	</ul>
+     	<ul>
+     		<h4>Contacts</h4>
+     		<li>zimbawbe</li>
+     		<li>23 R mugabe way</li>
+     		<li>Suit 301 ,Brookline</li>
+     	
+     	</ul>
+     	<ul>
+     		<h4>Elingo Social</h4>
+     		<li>Facebook</li>
+     		<li>Instagram</li>
+     		<li>twitter</li>
+     		<li>youtube</li>
+     		
+     	</ul>
+
+     </section>
+
+	</div>	
+
+</body>
+</html>

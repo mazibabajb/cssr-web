@@ -1,0 +1,18 @@
+{% extends 'tutors/base3.html' %}
+ {% block content %}
+ {% load static %}
+  <section class="register">
+         <div class="register-form">
+            <h1>Login To your account</h1>
+            <form method="POST">
+              {% csrf_token %}
+            {{ form.as_p }}
+             <button>login</button>
+             </form>
+             <small>Dont have an account <a href="{% url 'register' %}">Signup Now</a></small>
+             
+         </div>
+            
+      </section>
+
+{% endblock content %}

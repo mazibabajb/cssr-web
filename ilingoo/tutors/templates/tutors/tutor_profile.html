@@ -1,0 +1,138 @@
+{% extends 'tutors/base3.html' %}
+ {% block content %}
+ {% load static %}
+     <section class="Dashboard">
+         <div class="Dash-sidebar">
+            <h1>Tutor Dashboard</h1>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Active students</a></li>
+            <li><a href="#">Schedule</a></li>
+            <li><a href="#">lessons Taken</a></li>
+            <li><a href="#">Earnings</a></li>
+            <li><a href="#">total number of students</a></li>       
+         </div>
+
+         <div class="dash-home">
+            <div class="Earning-bar">
+                <li>Hourly rate <span>$13</span></li>
+                <li>Last month <span>$324</span></li>
+                <li>Best month <span>$324</span></li>
+            </div>
+             
+         </div>
+            
+      </section>
+      <section class="Profile-info">
+        <li>
+                <figure>
+                        <img src="{{ user.profile.image.url }}" alt="">
+                        <figcaption> <h2>{{ user.username }}</h2></figcaption>
+                        <blockquote>{{ user.description }} </blockquote>
+                        
+                    </figure>
+                </li>
+                <form method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+            {{ u_form.as_p }}
+            {{ p_form.as_p }}
+             <button>Update</button>
+       </form>
+          
+      </section>
+      <section class=".profile-update"> 
+      
+      </section>
+             
+
+      <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>sunday</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>wedanesday</th>
+                        <th>Thursaday</th>
+                        <th>Friday</th>
+                        <th>Surtaday</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>8:00 -- 9:00</td>
+                        <td><i class="fas fa-times"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-times"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-times"></i></td>
+                    </tr>
+                    <tr>
+                        <td>9:00 -- 10:00</td>
+                        <td><i class="fas fa-times"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-times"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-times"></i></td>
+                    </tr>
+                    <tr>
+                        <td>10:00 -- 11:00</td>
+                        <td><i class="fas fa-times"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-times"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-times"></i></td>
+                    </tr>
+                    <tr>
+                        <td>11:00 -- 12:00</td>
+                        <td><i class="fas fa-times"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-times"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-times"></i></td>
+                    </tr>
+                    <tr>
+                        <td>12:00 -- 13:00</td>
+                        <td><i class="fas fa-times"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-times"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-times"></i></td>
+                    </tr>
+                    <tr>
+                        <td>13:00 -- 13:00</td>
+                        <td><i class="fas fa-times"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-times"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-times"></i></td>
+                    </tr>
+                   <tr>
+                        <td>14:00 -- 15:00</td>
+                        <td><i class="fas fa-times"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-times"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-times"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+      </div>
+   </section>
+
+{% endblock content %}

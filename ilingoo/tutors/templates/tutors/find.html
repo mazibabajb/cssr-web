@@ -1,0 +1,78 @@
+{% extends 'tutors/base.html' %}
+ {% block content %}
+ {% load static %}
+   <section class="lower-nav">
+      <ul>  
+        <h5>SUBJECT</h5>
+        <li>English language</li>
+      </ul> 
+      <ul>  
+        <h5>PRICE</h5>
+        <li>1-$40</li>
+      </ul> 
+      <ul>  
+        <h5>ORIGILALY FROM</h5>
+        <li>English language</li>
+      </ul> 
+      <ul>  
+        <h5>TUTOR AVAILABLLE</h5>
+        <li>Any Time</li>
+      </ul> 
+
+    </section>
+    <section class="third-nav"> 
+        <li><a href="find.html">Specilities</a></li>
+        <li><a href="about.html">Also Speaks</a></li>
+        <li><a href="Become.html">Native Speaker</a></li>
+        <li><a href="about.html">Sort by relevance</a></li>
+       </ul>
+    </section>
+    </div>
+  </div>
+  <div class="container"> 
+      <section class="mid"> 
+        <h3>Browse and book an online English tutor for a personalized English lesson online now</h3>
+        <p> Every person trying to learn English has a vision of what success looks like when communicating in a professional environment, for academic success or with friends and family.</p>
+      </section>
+      {% for profiles in profile %}
+       <section class="prof-container"> 
+        <div class="prof">  
+          
+          <div class="prof-info"> 
+          <img src="{{ user.profile.image.url }}">
+          <div class="prof-details">
+          <i class="fas fa-user-alt"></i>
+          <h5>{{ user.username }}</h5>  
+          <h6>  76 Active Students</h6> <h6>802 lessons</h6>
+          <h6>{{ user.native_language }}</h6>
+          <p> {{ user.description }}</p>
+          <button><a href="{% url 'profile' %} ">Full profile</a> </button>
+          <button>Schedule</button>
+          </div>
+          </div>
+          <div class="prof-sidebar">  
+            <li><h3>$19</h3> <p>per hour</p></li>
+            <li><button>Book trial lesson</button></li>
+            <li><button>Message</button></li>
+
+          </div>
+
+          <div class="prof-sidebar-2">  
+            <li><h3>Intro video</h3> </li>
+              <img src="{% static 'tutors/img/LKKK.jpg' %}">
+
+          </div>
+
+
+
+        </div>
+
+      </section>
+      {% endfor %}
+
+    
+      
+    
+    
+
+{% endblock content %}

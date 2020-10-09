@@ -1,0 +1,18 @@
+{% extends 'tutors/base3.html' %}
+ {% block content %}
+ {% load static %}
+  <section class="register">
+         <div class="register-form">
+            <h1>REGISTER AS  TUTOR ON ELINGO</h1>
+            <form method="POST">
+              {% csrf_token %}
+            {{ form.as_p }}
+             <button>Submit</button>
+             </form>
+             <small>Already have an Account <a href="{% url 'login' %}">Login</a></small>
+             
+         </div>
+            
+      </section>
+
+{% endblock content %}
